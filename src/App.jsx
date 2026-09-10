@@ -27,7 +27,7 @@ export default function App() {
         <footer className="footer">
           <div className="lockup" translate="no">
             <p className="lockup__name">Luca Barbato</p>
-            <p className="lockup__role">Computer Engineer Student @ polito.it</p>
+            <p className="lockup__role">Computer Engineering Student @ polito.it</p>
           </div>
           <div className="cluster">
             <a
