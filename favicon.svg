@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LB monogram">
+  <title>LB</title>
+  <!-- Auto light/dark: same tile + LogoMark geometry, colors follow OS theme.
+       Browsers that ignore SVG-internal queries still get the right tile
+       via the media-queried <link> tags in index.html. -->
+  <style>
+    :root { --tile: #fcfcfa; --ink: #131515; --line: rgba(19, 21, 21, 0.1); }
+    @media (prefers-color-scheme: dark) {
+      :root { --tile: #08090b; --ink: #f1f2ee; --line: rgba(255, 255, 255, 0.11); }
+    }
+  </style>
+  <rect width="64" height="64" rx="14" style="fill: var(--tile)"/>
+  <g transform="translate(2 10) scale(0.5)" style="fill: var(--ink)">
+    <path d="M16 12H28V64H40V76H16Z"/>
+    <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>
+    <path fill-rule="evenodd" d="M52 44H104V76H52ZM64 53H93V67H64Z"/>
+  </g>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" style="stroke: var(--line)"/>
+</svg>

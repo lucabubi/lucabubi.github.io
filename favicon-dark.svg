@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LB monogram">
+  <title>LB</title>
+  <!-- Tile: dark theme bg (#08090b). Mark: dark theme ink (#f1f2ee), same geometry as LogoMark. -->
+  <rect width="64" height="64" rx="14" fill="#08090b"/>
+  <g fill="#f1f2ee" transform="translate(2 10) scale(0.5)">
+    <path d="M16 12H28V64H40V76H16Z"/>
+    <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>
+    <path fill-rule="evenodd" d="M52 44H104V76H52ZM64 53H93V67H64Z"/>
+  </g>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.11"/>
+</svg>

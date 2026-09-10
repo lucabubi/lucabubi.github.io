@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Luca Barbato</title>
+    <meta
+      name="description"
+      content="Luca Barbato — Software Engineer. Minimal personal brand."
+    />
+    <meta name="theme-color" id="meta-theme-color" content="#fcfcfa" />
+    <meta name="color-scheme" content="light dark" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon: LB monogram tile, light/dark from the same theme tokens as the page.
+         The active file is chosen by JS (pre-paint script below + syncFavicon)
+         so the icon tracks the site theme — including manual toggles — while
+         the media attributes remain as a no-JS fallback. PNGs cover legacy,
+         apple-touch-icon covers iOS. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: light)" href="/favicon-light.svg" />
+    <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="/favicon-dark.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" href="/favicon-light-32.png" />
+    <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="/favicon-dark-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <script>
+      // Set initial theme before first paint — avoids light/dark flicker.
+      (function () {
+        try {
+          var stored = localStorage.getItem("lb-theme");
+          var theme = stored === "light" || stored === "dark" ? stored : null;
+          if (!theme && window.matchMedia) {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          theme = theme || "light";
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.style.colorScheme = theme;
+          var meta = document.getElementById("meta-theme-color");
+          if (meta) meta.setAttribute("content", theme === "dark" ? "#08090b" : "#fcfcfa");
+          // Favicon follows the site theme, not just the OS: point every
+          // icon link at this theme's files (mirrors syncFavicon() in
+          // src/theme/favicon.js, which takes over after hydration).
+          var svgHref = theme === "dark" ? "/favicon-dark.svg" : "/favicon-light.svg";
+          var pngHref = theme === "dark" ? "/favicon-dark-32.png" : "/favicon-light-32.png";
+          var links = document.querySelectorAll('link[rel="icon"]');
+          for (var i = 0; i < links.length; i++) {
+            var type = links[i].getAttribute("type");
+            if (type === "image/svg+xml") links[i].setAttribute("href", svgHref);
+            else if (type === "image/png") links[i].setAttribute("href", pngHref);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BqKhKymW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-By4HCne2.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
