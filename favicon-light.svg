@@ -1,7 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LB monogram">
   <title>LB</title>
-  <!-- Tile: light theme bg (#fcfcfa). Mark: light theme ink (#131515), same geometry as LogoMark. -->
-  <rect width="64" height="64" rx="14" fill="#fcfcfa"/>
+  <!-- Tile: aurora mesh from the light theme (same washes as the page).
+       Mark: light theme ink (#131515), same geometry as LogoMark. -->
+  <defs>
+    <clipPath id="lb-tile">
+      <rect width="64" height="64" rx="14"/>
+    </clipPath>
+    <radialGradient id="lb-sky" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(54.4 7.68) scale(64 32)">
+      <stop offset="0" stop-color="#a5d2ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#a5d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-lavender" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(7.68 22.4) scale(57.6 41.6)">
+      <stop offset="0" stop-color="#cdb9ff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#cdb9ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-peach" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(51.2 39.68) scale(57.6 38.4)">
+      <stop offset="0" stop-color="#ffc8aa" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffc8aa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-mint" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(9.6 51.2) scale(60.8 35.2)">
+      <stop offset="0" stop-color="#aaebcd" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#aaebcd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-rose" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(35.2 62.72) scale(67.2 25.6)">
+      <stop offset="0" stop-color="#ffb4cd" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffb4cd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-sheen" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(32 28.16) scale(48 25.6)">
+      <stop offset="0" stop-color="#fffffd" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#fffffd" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#lb-tile)">
+    <rect width="64" height="64" fill="#fafaf8"/>
+    <rect width="64" height="64" fill="url(#lb-sky)"/>
+    <rect width="64" height="64" fill="url(#lb-lavender)"/>
+    <rect width="64" height="64" fill="url(#lb-peach)"/>
+    <rect width="64" height="64" fill="url(#lb-mint)"/>
+    <rect width="64" height="64" fill="url(#lb-rose)"/>
+    <rect width="64" height="64" fill="url(#lb-sheen)"/>
+  </g>
   <g fill="#131515" transform="translate(2 10) scale(0.5)">
     <path d="M16 12H28V64H40V76H16Z"/>
     <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>

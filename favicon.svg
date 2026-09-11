@@ -1,19 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LB monogram">
   <title>LB</title>
-  <!-- Auto light/dark: same tile + LogoMark geometry, colors follow OS theme.
-       Browsers that ignore SVG-internal queries still get the right tile
-       via the media-queried <link> tags in index.html. -->
+  <!-- Auto light/dark: light branch carries the aurora mesh (same washes as
+       the page), dark branch stays flat like the dark theme. Browsers that
+       ignore SVG-internal queries still get the right tile via the
+       media-queried <link> tags in index.html; syncFavicon() drives it
+       after hydration. -->
   <style>
-    :root { --tile: #fcfcfa; --ink: #131515; --line: rgba(19, 21, 21, 0.1); }
+    .for-dark { display: none; }
     @media (prefers-color-scheme: dark) {
-      :root { --tile: #08090b; --ink: #f1f2ee; --line: rgba(255, 255, 255, 0.11); }
+      .for-light { display: none; }
+      .for-dark { display: block; }
     }
   </style>
-  <rect width="64" height="64" rx="14" style="fill: var(--tile)"/>
-  <g transform="translate(2 10) scale(0.5)" style="fill: var(--ink)">
-    <path d="M16 12H28V64H40V76H16Z"/>
-    <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>
-    <path fill-rule="evenodd" d="M52 44H104V76H52ZM64 53H93V67H64Z"/>
+  <defs>
+    <clipPath id="lb-tile">
+      <rect width="64" height="64" rx="14"/>
+    </clipPath>
+    <radialGradient id="lb-sky" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(54.4 7.68) scale(64 32)">
+      <stop offset="0" stop-color="#a5d2ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#a5d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-lavender" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(7.68 22.4) scale(57.6 41.6)">
+      <stop offset="0" stop-color="#cdb9ff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#cdb9ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-peach" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(51.2 39.68) scale(57.6 38.4)">
+      <stop offset="0" stop-color="#ffc8aa" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffc8aa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-mint" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(9.6 51.2) scale(60.8 35.2)">
+      <stop offset="0" stop-color="#aaebcd" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#aaebcd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-rose" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(35.2 62.72) scale(67.2 25.6)">
+      <stop offset="0" stop-color="#ffb4cd" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffb4cd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lb-sheen" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(32 28.16) scale(48 25.6)">
+      <stop offset="0" stop-color="#fffffd" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#fffffd" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g class="for-light">
+    <g clip-path="url(#lb-tile)">
+      <rect width="64" height="64" fill="#fafaf8"/>
+      <rect width="64" height="64" fill="url(#lb-sky)"/>
+      <rect width="64" height="64" fill="url(#lb-lavender)"/>
+      <rect width="64" height="64" fill="url(#lb-peach)"/>
+      <rect width="64" height="64" fill="url(#lb-mint)"/>
+      <rect width="64" height="64" fill="url(#lb-rose)"/>
+      <rect width="64" height="64" fill="url(#lb-sheen)"/>
+    </g>
+    <g fill="#131515" transform="translate(2 10) scale(0.5)">
+      <path d="M16 12H28V64H40V76H16Z"/>
+      <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>
+      <path fill-rule="evenodd" d="M52 44H104V76H52ZM64 53H93V67H64Z"/>
+    </g>
+    <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#131515" stroke-opacity="0.1"/>
   </g>
-  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" style="stroke: var(--line)"/>
+  <g class="for-dark">
+    <rect width="64" height="64" rx="14" fill="#08090b"/>
+    <g fill="#f1f2ee" transform="translate(2 10) scale(0.5)">
+      <path d="M16 12H28V64H40V76H16Z"/>
+      <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>
+      <path fill-rule="evenodd" d="M52 44H104V76H52ZM64 53H93V67H64Z"/>
+    </g>
+    <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.11"/>
+  </g>
 </svg>
