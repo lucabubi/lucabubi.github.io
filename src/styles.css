@@ -19,6 +19,16 @@
   --font-sans: "Inter Tight", "Inter", -apple-system, blinkmacsystemfont,
     "Segoe UI", system-ui, sans-serif;
 
+  /* Aurora mesh (light) — pastel washes from wallpaper-iphone-color-light,
+     same blobs/positions: sky, lavender, peach, mint, rose + sheen. */
+  --mesh-base: #fafaf8;
+  --mesh-sky: 165 210 255;
+  --mesh-lavender: 205 185 255;
+  --mesh-peach: 255 200 170;
+  --mesh-mint: 170 235 205;
+  --mesh-rose: 255 180 205;
+  --mesh-sheen: 255 255 253;
+
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --theme-duration: 600ms;
   --logo-size: clamp(13rem, 48vmin, 24rem);
@@ -98,6 +108,49 @@ body {
     color var(--theme-duration) ease;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Light theme: aurora mesh instead of the monochrome vignette.
+   The toolbar feather stays on top so the page still meets the
+   Safari toolbar (theme-color = --bg) with no seam. Dark is untouched. */
+:root[data-theme="light"] .page {
+  background-color: var(--mesh-base);
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent calc(100% - 7rem),
+      var(--bg) 100%
+    ),
+    radial-gradient(
+      ellipse 75% 40% at 50% 44%,
+      rgb(var(--mesh-sheen) / 0.6),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 105% 40% at 55% 98%,
+      rgb(var(--mesh-rose) / 0.6),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 95% 55% at 15% 80%,
+      rgb(var(--mesh-mint) / 0.75),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 80% 62%,
+      rgb(var(--mesh-peach) / 0.75),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 90% 65% at 12% 35%,
+      rgb(var(--mesh-lavender) / 0.8),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 100% 50% at 85% 12%,
+      rgb(var(--mesh-sky) / 0.85),
+      transparent 100%
+    );
 }
 
 /* Soft halo behind the mark — the only atmosphere. */
