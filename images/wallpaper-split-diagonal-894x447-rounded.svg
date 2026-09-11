@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="894" height="447" viewBox="0 0 894 447" role="img" aria-label="LB monogram, light and dark split">
+  <title>LB — light / dark</title>
+  <!-- Split banner (rounded): 20deg diagonal through the center (top 528.35,
+       bottom 365.65). Mesh side = light aurora (same washes as the site);
+       dark side = site dark theme (bg + vignette + halo). The LB monogram
+       sits centered ON the cut, divided along the same diagonal:
+       #131515 on mesh, #f1f2ee on dark, counters in true transparency.
+       Whole artwork clipped to a subtly rounded tile (rx=14). -->
+  <defs>
+    <clipPath id="sp-round">
+      <rect width="894" height="447" rx="14"/>
+    </clipPath>
+    <clipPath id="sp-mesh">
+      <polygon points="0,0 528.35,0 365.65,447 0,447"/>
+    </clipPath>
+    <clipPath id="sp-dark">
+      <polygon points="528.35,0 894,0 894,447 365.65,447"/>
+    </clipPath>
+    <radialGradient id="sp-sky" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(759.9 53.64) scale(894 223.5)">
+      <stop offset="0" stop-color="#a5d2ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#a5d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sp-lavender" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(107.28 156.45) scale(804.6 290.55)">
+      <stop offset="0" stop-color="#cdb9ff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#cdb9ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sp-peach" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(715.2 277.14) scale(804.6 268.2)">
+      <stop offset="0" stop-color="#ffc8aa" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffc8aa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sp-mint" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(134.1 357.6) scale(849.3 245.85)">
+      <stop offset="0" stop-color="#aaebcd" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#aaebcd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sp-rose" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(491.7 438.06) scale(938.7 178.8)">
+      <stop offset="0" stop-color="#ffb4cd" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffb4cd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sp-sheen" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(447 196.68) scale(670.5 178.8)">
+      <stop offset="0" stop-color="#fffffd" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#fffffd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sp-vig" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(447 0) scale(697 261)">
+      <stop offset="0" stop-color="#0e1216" stop-opacity="0"/>
+      <stop offset="0.423" stop-color="#0e1216" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0e1216" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="sp-halo" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(447 223.5) scale(161 161)">
+      <stop offset="0" stop-color="#f1f2ee" stop-opacity="0.06"/>
+      <stop offset="0.72" stop-color="#f1f2ee" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f1f2ee" stop-opacity="0"/>
+    </radialGradient>
+    <g id="sp-lb">
+      <path d="M16 12H28V64H40V76H16Z"/>
+      <path fill-rule="evenodd" d="M52 12H88A16 16 0 0 1 88 44H52ZM81 28a7 7 0 1 0 14 0 7 7 0 1 0-14 0Z"/>
+      <path fill-rule="evenodd" d="M52 44H104V76H52ZM64 53H93V67H64Z"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#sp-round)">
+    <!-- dark base, full canvas -->
+    <rect width="894" height="447" fill="#08090b"/>
+    <g clip-path="url(#sp-dark)">
+      <rect width="894" height="447" fill="url(#sp-vig)"/>
+      <rect width="894" height="447" fill="url(#sp-halo)"/>
+    </g>
+
+    <!-- light aurora, mesh side of the cut -->
+    <g clip-path="url(#sp-mesh)">
+      <rect width="894" height="447" fill="#fafaf8"/>
+      <rect width="894" height="447" fill="url(#sp-sky)"/>
+      <rect width="894" height="447" fill="url(#sp-lavender)"/>
+      <rect width="894" height="447" fill="url(#sp-peach)"/>
+      <rect width="894" height="447" fill="url(#sp-mint)"/>
+      <rect width="894" height="447" fill="url(#sp-rose)"/>
+      <rect width="894" height="447" fill="url(#sp-sheen)"/>
+    </g>
+
+    <!-- monogram, one half per side of the same diagonal -->
+    <g clip-path="url(#sp-mesh)">
+      <use href="#sp-lb" xlink:href="#sp-lb" transform="translate(447 223.5) scale(3.4921875) translate(-60 -44)" fill="#131515"/>
+    </g>
+    <g clip-path="url(#sp-dark)">
+      <use href="#sp-lb" xlink:href="#sp-lb" transform="translate(447 223.5) scale(3.4921875) translate(-60 -44)" fill="#f1f2ee"/>
+    </g>
+  </g>
+</svg>
