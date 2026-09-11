@@ -127,28 +127,28 @@ body {
       transparent 100%
     ),
     radial-gradient(
-      ellipse 105% 40% at 55% 98%,
-      rgb(var(--mesh-rose) / 0.6),
+      ellipse 90% 32% at 60% 70%,
+      rgb(var(--mesh-rose) / 0.55),
       transparent 100%
     ),
     radial-gradient(
-      ellipse 95% 55% at 15% 80%,
-      rgb(var(--mesh-mint) / 0.75),
+      ellipse 84% 38% at 20% 65%,
+      rgb(var(--mesh-mint) / 0.6),
       transparent 100%
     ),
     radial-gradient(
-      ellipse 90% 60% at 80% 62%,
-      rgb(var(--mesh-peach) / 0.75),
+      ellipse 82% 44% at 81% 57%,
+      rgb(var(--mesh-peach) / 0.65),
       transparent 100%
     ),
     radial-gradient(
-      ellipse 90% 65% at 12% 35%,
-      rgb(var(--mesh-lavender) / 0.8),
+      ellipse 80% 46% at 20% 42%,
+      rgb(var(--mesh-lavender) / 0.7),
       transparent 100%
     ),
     radial-gradient(
-      ellipse 100% 50% at 85% 12%,
-      rgb(var(--mesh-sky) / 0.85),
+      ellipse 85% 34% at 66% 32%,
+      rgb(var(--mesh-sky) / 0.65),
       transparent 100%
     );
 }
